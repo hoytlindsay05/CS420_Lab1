@@ -8,10 +8,9 @@ public class ProcessClient {
         try {
             // Lookup the remote object
             RemoteProcess remoteProcess = (RemoteProcess) Naming.lookup("rmi://localhost:1100/RemoteProcessService");
-
-            // Example usage
+            
             VectorClock vectorClock = remoteProcess.getVectorClock();
-            vectorClock.increment(1); // Assuming this is a valid operation for the client
+            vectorClock.increment(1);
 
             remoteProcess.sendEvent(1, "Test event");
 
